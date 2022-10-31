@@ -1,6 +1,6 @@
 <html>
 <head><title>RBA Exercise</title>
-<SCRIPT type="text/javascript" lang="javascript" src="http://cdn.gigya.com/js/gigya.js?apikey=4_3OGjiFK8u70Ubt4ZNZCuMw">
+<SCRIPT type="text/javascript" lang="javascript" src="http://cdns.gigya.com/js/gigya.js?apikey=4_3OGjiFK8u70Ubt4ZNZCuMw">
 </SCRIPT>
 </head>
 <body><h1>RBA Exercise</h1>
@@ -16,7 +16,9 @@ document.getElementById("logout").hidden=true; } else {
 alert('Error:' + response.errorMessage); }
 }}); }
 
-
+gigya.accounts.getAccountInfo({callback:function (response) { if (response.errorCode == 0) {
+	document.getElementById("logout").hidden=false; }
+}}); 
 
 gigya.socialize.addEventHandlers({
 onLogin: function () { document.getElementById("logout").hidden=false;
@@ -24,4 +26,3 @@ onLogin: function () { document.getElementById("logout").hidden=false;
         </script>
       </body>
 </html>
-
